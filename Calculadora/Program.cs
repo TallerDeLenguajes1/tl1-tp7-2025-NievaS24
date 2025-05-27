@@ -2,7 +2,8 @@
 
 char decision = 'Y';
 Calculadora MiCalcu = new Calculadora();
-int opcion, numero = 0;
+int opcion;
+double numero = 0;
 bool posibleInt, posibleChar;
 while (decision == 'Y' || decision == 'y')
 {
@@ -16,11 +17,12 @@ while (decision == 'Y' || decision == 'y')
         Console.WriteLine("\t[5] - Limpiar");
         posibleInt = int.TryParse(Console.ReadLine(), out opcion);
     } while (!posibleInt || opcion < 1 || opcion > 5);
-    if (opcion != 5) { 
+    if (opcion != 5)
+    {
         do
         {
             Console.WriteLine("Ingrese un numero");
-            posibleInt = int.TryParse(Console.ReadLine(), out numero);
+            posibleInt = double.TryParse(Console.ReadLine(), out numero);
         } while (!posibleInt);
     }
     switch (opcion)
